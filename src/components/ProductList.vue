@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { api } from "../services.js";
 export default {
   data() {
     return {
@@ -22,11 +23,10 @@ export default {
   },
   methods: {
     getProducts() {
-      fetch("http://localhost:3000/produto")
-        .then((response) => response.json())
-        .then((response) => {
-          this.products = response;
-        });
+      api.get("produto").then((response) => {
+        console.log("teste", response);
+        this.products = response.data;
+      });
     },
   },
   created() {
