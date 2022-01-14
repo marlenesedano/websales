@@ -8,6 +8,18 @@ Vue.config.productionTip = false;
 
 Vue.component("PageLoading", PageLoading);
 
+Vue.filter("numberPrice", (value) => {
+  value = Number(value);
+  if (!isNaN(value)) {
+    return value.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    });
+  } else {
+    return "";
+  }
+});
+
 new Vue({
   router,
   store,
