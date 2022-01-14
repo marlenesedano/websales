@@ -1,26 +1,29 @@
 <template>
   <section class="products-container">
-    <div class="products" v-if="products && products.length">
-      <div class="product" v-for="(product, index) in products" :key="index">
-        <router-link to="/">
-          <img
-            v-if="product.fotos"
-            :src="product.fotos[0].src"
-            alt="product.fotos[0].titulo"
-          />
-          <p class="price">{{ product.preco }}</p>
-          <h2 class="title">{{ product.nome }}</h2>
-          <p>{{ product.descricao }}</p>
-        </router-link>
+    <transition mode="out-in">
+      <div class="products" v-if="products && products.length" key="product">
+        <div class="product" v-for="(product, index) in products" :key="index">
+          <router-link to="/">
+            <img
+              v-if="product.fotos"
+              :src="product.fotos[0].src"
+              alt="product.fotos[0].titulo"
+            />
+            <p class="price">{{ product.preco }}</p>
+            <h2 class="title">{{ product.nome }}</h2>
+            <p>{{ product.descricao }}</p>
+          </router-link>
+        </div>
+        <ProductsPagination
+          :productsTotal="productsTotal"
+          :productsByPage="productsByPage"
+        />
       </div>
-      <ProductsPagination
-        :productsTotal="productsTotal"
-        :productsByPage="productsByPage"
-      />
-    </div>
-    <div v-else-if="products && products.length === 0">
-      <p class="no-result">Sem resultados. Tente buscar outro termo.</p>
-    </div>
+      <div v-else-if="products && products.length === 0" key="no-result">
+        <p class="no-result">Sem resultados. Tente buscar outro termo.</p>
+      </div>
+      <PageLoading key="loading" v-else />
+    </transition>
   </section>
 </template>
 
@@ -28,6 +31,7 @@
 import { api } from "../services.js";
 import { serialize } from "../helpers";
 import ProductsPagination from "./ProductsPagination.vue";
+
 export default {
   name: "ProductList",
   components: {
@@ -48,10 +52,13 @@ export default {
   },
   methods: {
     getProducts() {
-      api.get(this.url).then((response) => {
-        this.productsTotal = Number(response.headers["x-total-count"]);
-        this.products = response.data;
-      });
+      this.products = null;
+      setTimeout(() => {
+        api.get(this.url).then((response) => {
+          this.productsTotal = Number(response.headers["x-total-count"]);
+          this.products = response.data;
+        });
+      }, 1500);
     },
   },
   watch: {
