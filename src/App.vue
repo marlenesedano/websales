@@ -27,6 +27,10 @@ export default {
   box-sizing: border-box;
 }
 
+label {
+  margin-bottom: 5px;
+}
+
 body,
 ul,
 li,

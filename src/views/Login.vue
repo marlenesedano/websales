@@ -1,5 +1,6 @@
 <template>
   <section class="login">
+    <h1>Login</h1>
     <form>
       <label for="email">Email</label>
       <input type="email" name="email" id="email" v-model="login.email" />
@@ -21,7 +22,12 @@
 
 <script>
 import CreateLogin from "../components/CreateLogin.vue";
+
 export default {
+  name: "Login",
+  components: {
+    CreateLogin,
+  },
   data() {
     return {
       login: {
@@ -30,7 +36,44 @@ export default {
       },
     };
   },
+  methods: {
+    logar() {},
+  },
 };
 </script>
 
-<style></style>
+<style scoped>
+.login {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+form {
+  display: grid;
+}
+
+.btn {
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lost {
+  text-align: center;
+  margin: 20px auto 0;
+}
+
+.lost a:hover {
+  color: #87f;
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 40px;
+  color: #87f;
+}
+</style>
