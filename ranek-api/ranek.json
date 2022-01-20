@@ -10,6 +10,17 @@
       "numero": "25",
       "estado": "RJ",
       "cidade": "Rio de Janeiro"
+    },
+    {
+      "id": "marlene@email.com",
+      "email": "marlene@email.com",
+      "nome": "Marlene Sedano",
+      "senha": "123",
+      "rua": "Rua tal",
+      "cep": "12345678",
+      "numero": "25",
+      "estado": "MS",
+      "cidade": "Dourados"
     }
   ],
   "produto": [

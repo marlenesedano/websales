@@ -1,5 +1,5 @@
 <template>
-  <p>criar</p>
+  <div></div>
 </template>
 
 <script>
