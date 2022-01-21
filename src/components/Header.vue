@@ -17,7 +17,7 @@ export default {
   name: "Header",
   computed: {
     nome() {
-      return this.$store.state.user.name;
+      return this.$store.state.user.nome;
     },
   },
 };
