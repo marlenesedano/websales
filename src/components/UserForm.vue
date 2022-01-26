@@ -7,14 +7,14 @@
     <label for="password">Senha</label>
     <input type="password" name="password" id="password" v-model="password" />
     <label for="cep">Cep</label>
-    <input type="text" name="cep" id="cep" v-model="cep" />
-    <label for="number">Número</label>
-    <input type="number" name="number" id="number" v-model="number" />
+    <input type="text" name="cep" id="cep" v-model="cep" @keyup="fillCep" />
     <label for="street">Rua</label>
     <input type="text" name="street" id="street" v-model="street" />
+    <label for="number">Número</label>
+    <input type="number" name="number" id="number" v-model="number" />
     <label for="district">Bairro</label>
     <input type="text" name="district" id="district" v-model="district" />
-    <label for="city">City</label>
+    <label for="city">Cidade</label>
     <input type="text" name="city" id="city" v-model="city" />
     <label for="state">Estado</label>
     <input type="text" name="state" id="state" v-model="state" />
@@ -26,6 +26,8 @@
 
 <script>
 import { mapFields } from "../helpers";
+import { getCep } from "../services.js";
+
 export default {
   computed: {
     ...mapFields({
@@ -43,6 +45,19 @@ export default {
       base: "user",
       mutation: "UPDATE_USER",
     }),
+  },
+  methods: {
+    fillCep() {
+      const cep = this.cep.replace(/\D/g, "");
+      if (cep.length === 8) {
+        getCep(cep).then((response) => {
+          this.street = response.data.logradouro;
+          this.district = response.data.bairro;
+          this.state = response.data.uf;
+          this.city = response.data.localidade;
+        });
+      }
+    },
   },
 };
 </script>
