@@ -3,24 +3,73 @@
     {
       "id": "andre@origamid.com",
       "email": "andre@origamid.com",
-      "nome": "André Rafael",
-      "senha": "123",
-      "rua": "Rua Ali Perto",
+      "name": "André Rafael",
+      "password": "123",
+      "street": "street Ali Perto",
       "cep": "12345678",
-      "numero": "25",
-      "estado": "RJ",
-      "cidade": "Rio de Janeiro"
+      "number": "25",
+      "state": "RJ",
+      "city": "Rio de Janeiro"
     },
     {
       "id": "marlene@email.com",
       "email": "marlene@email.com",
-      "nome": "Marlene Sedano",
-      "senha": "123",
+      "name": "Marlene Sedano",
+      "password": "123",
       "rua": "Rua tal",
       "cep": "12345678",
-      "numero": "25",
-      "estado": "MS",
+      "number": "25",
+      "state": "MS",
       "cidade": "Dourados"
+    },
+    {
+      "id": "marlene@silenus.com",
+      "nome": "",
+      "email": "marlene@silenus.com",
+      "password": "67868",
+      "cep": "79822592",
+      "number": "567",
+      "city": "Dourados",
+      "district": "Vila Toscana",
+      "state": "MS",
+      "name": "Marlene",
+      "street": "Rua Takao Massago"
+    },
+    {
+      "id": "teste@teste.com",
+      "name": "testee",
+      "email": "teste@teste.com",
+      "password": "12345",
+      "cep": "79822230",
+      "number": "",
+      "city": "Dourados",
+      "district": "Parque do Lago II",
+      "state": "MS",
+      "street": "Rua Manoel Amaro de Matos"
+    },
+    {
+      "id": "oie@gmail.com",
+      "name": "oiee",
+      "email": "oie@gmail.com",
+      "password": "123",
+      "cep": "79822230",
+      "street": "Rua Manoel Amaro de Matos",
+      "number": "77",
+      "city": "Dourados",
+      "district": "Parque do Lago II",
+      "state": "MS"
+    },
+    {
+      "id": "uol@gmail.com",
+      "name": "uoll",
+      "email": "uol@gmail.com",
+      "password": "767668",
+      "cep": "79822592",
+      "street": "Rua Takao Massago",
+      "number": "9900",
+      "city": "Dourados",
+      "district": "Vila Toscana",
+      "state": "MS"
     }
   ],
   "produto": [

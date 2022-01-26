@@ -55,6 +55,8 @@ export default {
           this.district = response.data.bairro;
           this.state = response.data.uf;
           this.city = response.data.localidade;
+          console.log(response);
+          console.log("result", this.street);
         });
       }
     },
