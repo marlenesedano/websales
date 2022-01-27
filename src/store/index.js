@@ -19,6 +19,7 @@ export default new Vuex.Store({
       district: "",
       state: "",
     },
+    user_product: null,
   },
   mutations: {
     // é o que muda o user
@@ -28,8 +29,19 @@ export default new Vuex.Store({
     UPDATE_USER(state, payload) {
       state.user = Object.assign(state.user, payload);
     },
+    UPDATE_USER_PRODUCT(state, payload) {
+      state.user_product = payload;
+    },
+    ADD_USER_PRODUCT(state, payload) {
+      state.user_product.unshit(payload);
+    },
   },
   actions: {
+    getUserProduct(context) {
+      api.get(`/produto?user_id=${context.state.user_id}`).then((response) => {
+        context.commit("UPDATE_USER_PRODUCT", response.data);
+      });
+    },
     getUser(context, payload) {
       return api.get(`/usuario/${payload}`).then((response) => {
         context.commit("UPDATE_USER", response.data);

@@ -76,7 +76,7 @@
     {
       "id": "notebook1",
       "nome": "Notebook",
-      "usuario_id": "andre@origamid.com",
+      "usuario_id": "marlene@email.com",
       "preco": "4999",
       "vendido": "false",
       "descricao": "Esse é um novo notebook.",
@@ -85,7 +85,7 @@
     {
       "id": "smartphone1",
       "nome": "Smartphone",
-      "usuario_id": "andre@origamid.com",
+      "usuario_id": "marlene@email.com",
       "preco": "1999",
       "vendido": "false",
       "descricao": "Esse é um novo smartphone.",
