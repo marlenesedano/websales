@@ -12,6 +12,9 @@ export const api = {
   post(url, body) {
     return instanceURL.post(url, body);
   },
+  delete(url) {
+    return instanceURL.delete(url);
+  },
 };
 
 export function getCep(cep) {
