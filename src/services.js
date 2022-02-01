@@ -12,6 +12,9 @@ export const api = {
   post(url, body) {
     return instanceURL.post(url, body);
   },
+  put(url, body) {
+    return instanceURL.put(url, body);
+  },
   delete(url) {
     return instanceURL.delete(url);
   },
