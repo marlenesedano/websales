@@ -35,6 +35,25 @@
         "state": "MS"
       },
       "id": 2
+    },
+    {
+      "buyer_id": "marlene@email.com",
+      "product": {
+        "id": "smartphone1",
+        "nome": "Smartphone",
+        "usuario_id": "marlene@email.com",
+        "preco": "1999",
+        "vendido": "false",
+        "descricao": "Esse é um novo smartphone.",
+        "fotos": null
+      },
+      "adress": {
+        "cep": "12345678",
+        "street": "Rua tal",
+        "city": "Dourados",
+        "state": "MS"
+      },
+      "id": 3
     }
   ],
   "usuario": [

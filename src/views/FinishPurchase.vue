@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import UserForm from "../components//UserForm.vue";
+import UserForm from "../components/UserForm.vue";
 import { api } from "../services.js";
 import { mapState } from "vuex";
 export default {
@@ -23,8 +23,8 @@ export default {
     ...mapState(["user"]),
     purchase() {
       return {
-        buyer_id: this.user.email,
-        seller_id: this.user.usuario_id,
+        buyer_id: this.user.usuario_id,
+        seller_id: this.user.email,
         product: this.product,
         adress: {
           cep: this.user.cep,
